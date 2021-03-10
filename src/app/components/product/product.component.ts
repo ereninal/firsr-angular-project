@@ -12,8 +12,8 @@ export class ProductComponent implements OnInit {
 
   
   products:Product[] = [];
-  apiUrl = "https://jsonplaceholder.typicode.com/todos";
-  
+  apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+  dataLoaded = false;
   constructor(private httpClient:HttpClient) { }
 
   ngOnInit(): void {
@@ -23,10 +23,10 @@ export class ProductComponent implements OnInit {
   getProducts() {
 
     this.httpClient
-        .get<Product>(this.apiUrl)
+        .get<Product[]>(this.apiUrl)
         .subscribe((response) =>{
-          this.products = [response]
-          
+          this.products = response
+          this.dataLoaded = true;
         })
   }
 }

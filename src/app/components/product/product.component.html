@@ -1,5 +1,11 @@
-<table class="table">
-    
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">loaddi</div>
+<table class="table" >
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Completed</td>
+        <td>UserId</td>
+    </tr>
     <tr *ngFor="let p of products">
         <td>{{p.id}}</td>
         <td>{{p.title}}</td>
