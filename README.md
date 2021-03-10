@@ -1,1 +1,1 @@
-# firsr-angular-project
+# firs-angular-project
